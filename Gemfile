@@ -38,3 +38,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "jwt", "~> 2.2"
+gem "racc", "= 1.5.2", :source => "https://rubygems.org/"
