@@ -39,3 +39,12 @@ module MarketPlaceApi
     config.eager_load_paths << Rails.root.join('lib')
   end
 end
+
+if ENV['DOCKER_LOGS']
+  fd = IO.sysopen("/proc/1/fd/1","w")
+  io = IO.new(fd,"w")
+  io.sync = true
+  MY_APPLICATION_LOG_OUTPUT = io
+else
+  MY_APPLICATION_LOG_OUTPUT = $stdout
+end
